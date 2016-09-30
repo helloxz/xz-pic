@@ -8,10 +8,10 @@
 	$img_tmp = $_FILES["file"]["tmp_name"];	//临时文件名称
 	$img_error = $_FILES["file"]["error"];	//错误代码
 
-	$max_size = 2097152;		//最大上传大小
+	$max_size = 2097152;		//最大上传大小2M
 	$current_time = date('ym',time());	//当前月份
-	$dir = 'uploads/'.$current_time;	//完整路径
-	$dir_name = $dir.'/'.$new_name;
+	$dir = 'uploads/'.$current_time;	//图片目录
+	$dir_name = $dir.'/'.$new_name;		//完整路径
 	
 
 	//判断文件夹是否存在，不存在则创建目录
@@ -49,10 +49,8 @@
 	    else {
 		    //如果上传成功
 		    if(move_uploaded_file($img_tmp,$dir_name)){
-			    $domain = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
-			    
 			    //请在下面设置您自己的域名
-			    $img_url = 'http://localhost/'.$dir_name;		//自定义图片路径
+			    $img_url = 'http://localhost/xz-pic/'.$dir_name;		//自定义图片路径
 			    $img_info = getimagesize($dir_name);
 			    $img_width = $img_info['0'];	//图片宽度
 			    $img_height = $img_info['1'];	//图片高度
