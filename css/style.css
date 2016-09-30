@@ -1,0 +1,134 @@
+body{
+			margin:0;
+			padding: 0;
+			font-size:14px;
+			font-family:'Î¢ÈíÑÅºÚ';
+			color:#333333;
+		}
+		#up{
+			width:900px;
+			height:auto;
+			/*border:1px solid red;*/
+			margin-left:auto;
+			margin-right:auto;
+			margin-top:60px;
+		}
+		#upform{
+			margin-left:auto;
+			margin-right:auto;
+		}
+		#show{
+			margin-top:40px;
+			width:860px;
+			margin-left:auto;
+			margin-right: auto;
+			display: none;
+		}
+		#msg{
+			width:600px;
+			margin-left:auto;
+			margin-right:auto;
+			/*height:400px;*/
+			/*border:1px solid red;*/
+			height:90px;
+		}
+		#loading_up{
+			width:200px;
+			position:relative;
+			top:0px;
+			left:200px;
+			/*border:1px solid red;*/
+			z-index:10;
+			display: none;
+		}
+		#success_up{
+			width:200px;
+			top:48px;
+			position:relative;
+			/*border:1px solid red;*/
+			left:200px;
+			z-index:20;
+			color:green;
+			display: none;
+		}
+		
+		#img-box{
+			width:600px;
+			margin-left:auto;
+			margin-right:auto;
+			/*border:1px solid red;*/
+			margin-top:20px;
+			display: none;
+			margin-bottom:40px;
+		}
+		#show tr{
+			line-height:40px;
+		}
+		#show input{
+			border:1px solid #A8A8A8;
+			padding:5px;
+			width:220px;
+		}
+		#show input:hover{
+			border:1px solid #3385FF;
+		}
+		
+		.btn{
+			border:0px;
+			background-color:#3385FF;
+			color:#FFFFFF;
+			line-height:19px;
+			padding:5px;
+			padding-left:16px;
+			padding-right:16px;
+			cursor:pointer;
+		}
+		#footer{
+			width:100%;
+			font-size:12px;
+			text-align:center;
+			/*background-color: #575757;*/
+			color:#737373;
+			line-height:32px;
+			position:fixed;
+			bottom:0;
+		}
+		#footer a{
+			 text-decoration:none;
+			 color:#919191;
+		}
+
+#instructions{
+	border-radius:10px;
+	width:500px;
+	height:200px;
+	border:1px solid #BFBFBF;
+	position:fixed;
+	top:200px;
+	/*left:40%;*/
+	background-color:#EEEEEE;
+	display: none;
+}
+
+#instructions li{
+	line-height:22px;
+}
+
+#use-title{
+	padding:12px;
+	padding-left:28px;
+	font-weight:bold;
+	font-size:14px;
+	border-bottom:1px solid #BFBFBF;
+	color:#009966;
+}
+
+#close{
+	float:right;
+	padding-right:18px;
+	color:#919191;
+}
+#close a{
+	color:#919191;
+	text-decoration:none;
+}
