@@ -2,6 +2,7 @@
 	error_reporting(E_ALL^E_NOTICE^E_WARNING^E_DEPRECATED);
 	$img_name = $_FILES["file"]["name"];	//文件名称
 	$suffix = substr(strrchr($img_name, '.'), 1);//文件后缀
+	$suffix = strtolower($suffix);				//文件后缀转换为小写
 	$new_name = date('his',time()).rand(1000,9999).'.'.$suffix;		//新的文件名
 	$img_type = $_FILES["file"]["type"];	//文件类型
 	$img_size = $_FILES["file"]["size"];	//文件大小
@@ -12,36 +13,78 @@
 	$current_time = date('ym',time());	//当前月份
 	$dir = 'uploads/'.$current_time;	//图片目录
 	$dir_name = $dir.'/'.$new_name;		//完整路径
-	
 
-	//判断文件夹是否存在，不存在则创建目录
-	if(!file_exists($dir)){
-		mkdir($dir,0777,true);
-	}
-	
-
-	//判断文件类型
-	switch ( $img_type )
+	//使用exif_imagetype函数来判断文件类型
+	$file_type = exif_imagetype($img_tmp);
+	switch ( $file_type )
 	{
-		case "image/gif":
+		case IMAGETYPE_GIF:
+			$status = 1;
+			break;
+		case IMAGETYPE_JPEG:
+			$status = 1;
+			break;
+		case IMAGETYPE_PNG:
+			$status = 1;
+			break;
+		case IMAGETYPE_BMP:
 			$status = 1;
 			break;	
-		case "image/jpeg":
-			$status = 1;
-			break;	
-		case "image/pjpeg":
-			$status = 1;
-			break;	
-		case "image/png":
-			$status = 1;
-		break;	
 		default:
 			$status = 0;
 			break;
 	}
 
+	//判断文件后缀
+	switch ( $suffix )
+	{
+		case jpg:
+			$suffix_status = 1;
+			break;
+		case png:
+			$suffix_status = 1;
+			break;
+		case jpeg:
+			$suffix_status = 1;
+			break;
+		case bmp:
+			$suffix_status = 1;
+			break;					
+		default:
+			$suffix_status = 0;
+			break;
+	}
+
+	//判断文件夹是否存在，不存在则创建目录
+	if(!file_exists($dir)){
+		mkdir($dir,0777,true);
+	}
+
+	//判断文件类型
+	
+	
+	//判断文件类型
+	//switch ( $img_type )
+	//{
+	//	case "image/gif":
+	//		$status = 1;
+	//		break;	
+	//	case "image/jpeg":
+	//		$status = 1;
+	//		break;	
+	//	case "image/pjpeg":
+	//		$status = 1;
+	//		break;	
+	//	case "image/png":
+	//		$status = 1;
+	//	break;	
+	//	default:
+	//		$status = 0;
+	//		break;
+	//}
+	
 	//开始上传
-	if(($img_size <= $max_size) && ($status == 1)) {
+	if(($img_size <= $max_size) && ($status == 1) && ($suffix_status == 1)) {
 		if ($_FILES["file"]["error"] > 0)
 	    {
 	    	echo "Return Code: " . $_FILES["file"]["error"] . "<br />";
