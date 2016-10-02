@@ -3,7 +3,7 @@
 	$img_name = $_FILES["file"]["name"];	//文件名称
 	$suffix = substr(strrchr($img_name, '.'), 1);//文件后缀
 	$suffix = strtolower($suffix);				//文件后缀转换为小写
-	$new_name = date('his',time()).rand(1000,9999).'.'.$suffix;		//新的文件名
+	$new_name = date('dhis',time()).rand(1000,9999).'.'.$suffix;		//新的文件名
 	$img_type = $_FILES["file"]["type"];	//文件类型
 	$img_size = $_FILES["file"]["size"];	//文件大小
 	$img_tmp = $_FILES["file"]["tmp_name"];	//临时文件名称
