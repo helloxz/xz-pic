@@ -53,7 +53,6 @@ $(document).ready(function(){
 				$("#img-box").show();
 				//alert(imginfo.linkurl);
 				//$("#show_img").src = data.linkurl;
-				
 			}
 			else{
 				alert('上传错误！请重新上传图片。');
@@ -70,3 +69,33 @@ function use(){
 }
 
 //复制按钮
+$(document).ready(function(){
+	$("#copyhtml").click(function(){
+		new clipBoard($("#htmlurl"),{
+			copy: function() {
+				return $("#htmlurl").val();	
+			},
+			afterCopy: function() {
+				layer.open({
+					title:'温馨提示',
+					content:'复制成功！',
+					time:1500
+				});
+			}
+		});
+	});
+	$("#copymd").click(function() {
+		new clipBoard($("#mdurl"),{
+			copy: function() {
+				return $("#mdurl").val();
+			},
+			afterCopy: function() {
+				layer.open({
+					title:'温馨提示',
+					content:'复制成功！',
+					time:1500
+				});
+			}
+		});
+	});
+});

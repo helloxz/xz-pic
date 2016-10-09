@@ -8,10 +8,11 @@
 	<meta name="keywords" content="图床,小z博客,小z图床" />
 	<meta name="description" content="" />
 	<link rel="stylesheet" href="./css/style.css" type="text/css" media="screen" />
-	<script src = "./js/jquery.min.js"></script>
+	<script type="text/javascript" src="./js/jquery.min.js"></script>
 	<script src = "./js/jquery.form.js"></script>
+	<script src="./js/clipBoard.min.js"></script>
+	<script src = "./js/layer.js"></script>
 	<script src = "./js/embed.js"></script>
-	<script src = "./js/jquery.zclip.js"></script>
 </head>
 <body>
 	<div id = "msg">
@@ -40,11 +41,17 @@
 				</tr>
 				<tr>
 					<td width = "40%" align="right" style = "padding-right:20px;">HTML代码：</td>
-					<td><input type = "text" name = "htmlurl" id = "htmlurl" value = ""></td>
+					<td>
+						<input type = "text" name = "htmlurl" id = "htmlurl" value = "">
+						<a href = "javascript:;" class = "copy" id = "copyhtml">复 制</a>
+					</td>
 				</tr>
 				<tr>
 					<td width = "40%" align="right" style = "padding-right:20px;">Markdown：</td>
-					<td><input type = "text" name = "htmlurl" id = "mdurl" value = ""></td>
+					<td>
+						<input type = "text" name = "mdurl" id = "mdurl" value = "">
+						<a href = "javascript:;" class = "copy" id = "copymd">复 制</a>
+					</td>
 				</tr>	
 			</table>
 		</form>
