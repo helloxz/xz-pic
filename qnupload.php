@@ -60,6 +60,9 @@
 			break;
 		case bmp:
 			$suffix_status = 1;
+			break;
+		case gif:
+			$suffix_status = 1;
 			break;					
 		default:
 			$suffix_status = 0;
@@ -93,7 +96,7 @@
 			 	move_uploaded_file("./$dir_name",qnup($qnkey,$dir_name,$dir_name));
 		 	}
 		    
-		    $img_url = 'http://oipzm7zbj.bkt.clouddn.com/'.$dir_name;		//自定义图片路径
+		    $img_url = $qnkey['domain'].$dir_name;		//自定义图片路径
 		    
 		    $img_width = $img_info['0'];	//图片宽度
 		    $img_height = $img_info['1'];	//图片高度

@@ -1,4 +1,12 @@
 $(document).ready(function(){
+	//上传选项
+	$("#localhost").click(function(){
+				$("#upform").attr("action", "./upload.php");
+			});
+	$("#qiniu").click(function(){
+		$("#upform").attr("action", "./qnupload.php");
+	});
+	
 	$("#close").click(function(){
 		$("#instructions").hide();
 	});
@@ -15,7 +23,8 @@ $(document).ready(function(){
 		$("#loading_up").show();
 		//使用jquery.form插件异步提交表单，详细内容参考官方文档
 		$("#upform").ajaxForm(function(data,status){
-			alert(data);
+			//输出返回结果
+			//alert(data);
 			var imginfo = new Function("return" + data)();//转换后的JSON对象
 			
 			if(imginfo.status != 'ok') {

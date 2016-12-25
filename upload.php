@@ -49,7 +49,10 @@
 			break;
 		case bmp:
 			$suffix_status = 1;
-			break;					
+			break;
+		case gif:
+			$suffix_status = 1;
+			break;						
 		default:
 			$suffix_status = 0;
 			break;
