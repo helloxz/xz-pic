@@ -15,7 +15,7 @@ $(document).ready(function(){
 		$("#loading_up").show();
 		//使用jquery.form插件异步提交表单，详细内容参考官方文档
 		$("#upform").ajaxForm(function(data,status){
-			//alert(data);
+			alert(data);
 			var imginfo = new Function("return" + data)();//转换后的JSON对象
 			
 			if(imginfo.status != 'ok') {

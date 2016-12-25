@@ -60,28 +60,6 @@
 		mkdir($dir,0777,true);
 	}
 
-	//判断文件类型
-	
-	
-	//判断文件类型
-	//switch ( $img_type )
-	//{
-	//	case "image/gif":
-	//		$status = 1;
-	//		break;	
-	//	case "image/jpeg":
-	//		$status = 1;
-	//		break;	
-	//	case "image/pjpeg":
-	//		$status = 1;
-	//		break;	
-	//	case "image/png":
-	//		$status = 1;
-	//	break;	
-	//	default:
-	//		$status = 0;
-	//		break;
-	//}
 	
 	//开始上传
 	if(($img_size <= $max_size) && ($status == 1) && ($suffix_status == 1)) {

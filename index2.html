@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<title>小z博客专用图床 - 小z博客</title>
+	<meta name="generator" content="EverEdit" />
+	<meta name="author" content="小z" />
+	<meta name="keywords" content="图床,小z博客,小z图床" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href="./css/style.css" type="text/css" media="screen" />
+	<script type="text/javascript" src="./js/jquery.min.js"></script>
+	<script src = "./js/jquery.form.js"></script>
+	<script src="./js/clipBoard.min.js"></script>
+	<script src = "./js/layer.js"></script>
+	<script src = "./js/embed.js"></script>
+	<style type = "text/css">
+		#interface {
+			text-align: center;
+		}
+		#localhost {
+			border:0px;
+			background-color:#3385FF;
+			color:#FFFFFF;
+			line-height:19px;
+			padding:5px;
+			padding-left:16px;
+			padding-right:16px;
+			cursor:pointer;
+			border:1px solid #ccc;
+			border-right:0;
+		}
+		#qiniu {
+			border:0px;
+			background-color:#FFFFFF;
+			color:#3385FF;
+			line-height:19px;
+			padding:5px;
+			padding-left:16px;
+			padding-right:16px;
+			cursor:pointer;
+			border:1px solid #ccc;
+			border-left:0;
+		}
+	</style>
+</head>
+<body>
+	<div id = "msg">
+		<div id = "loading_up">
+			<center><img src = "./img/ajax-loader_1.gif" width = "88" height = "88" /></center>
+		<center>正在上传，请稍后...</center>
+		</div>
+		<div id = "success_up"><center>上传成功！</center></div>
+		<div id = "interface">
+			<p>接口设置</p>
+			<p><button id = "localhost">本地</button><button id = "qiniu">七牛</button></p>
+		</div>
+	</div>
+	<div id = "up">
+		<center>
+		<form enctype="multipart/form-data" method="post" action="./qnupload.php" id = "upform">
+		<input name="Token" id = "token" value="这里填写您在贴图库获取的Token" type="hidden">
+		<input type="file" name="file" id = "file" class = "up-file">
+		<input type="submit" id = 'btn' value = "开始上传" class = "btn">
+		</form>
+		</center>
+	</div>
+	<div id = "show">
+		<center>
+		<form>
+			<table width = "780">
+				<tr>
+					<td width = "40%" align="right" style = "padding-right:20px;">图片外链：</td>
+					<td><input type = "text" name = "linkurl" id = "linkurl" value = ""></td>
+				</tr>
+				<tr>
+					<td width = "40%" align="right" style = "padding-right:20px;">HTML代码：</td>
+					<td>
+						<input type = "text" name = "htmlurl" id = "htmlurl" value = "">
+						<a href = "javascript:;" class = "copy" id = "copyhtml">复 制</a>
+					</td>
+				</tr>
+				<tr>
+					<td width = "40%" align="right" style = "padding-right:20px;">Markdown：</td>
+					<td>
+						<input type = "text" name = "mdurl" id = "mdurl" value = "">
+						<a href = "javascript:;" class = "copy" id = "copymd">复 制</a>
+					</td>
+				</tr>	
+			</table>
+		</form>
+		</center>
+	</div>
+	<!--图片上传成功后显示-->
+	<div id = "img-box"><center><a href = "" id = "img-url" target = "_blank" title = "点此查看原图" rel = "nofollow"><img src = "" id = "show_img" width="" height="" /></a></center></div>
+	<!--底部版权-->
+	<div id = "footer">©2015 Powered by <a href = "https://www.xiaoz.me" target = "_blank">小z博客</a> | <a href = "https://github.com/helloxz/xz-pic" rel = "nofollow" target = "_blank">源码下载 | <a href = "javascript:;" onclick = "use();">使用说明</a></div>
+	<div id = "zhezhao">
+		<div id = "instructions">
+			<div id = "use-title">使用说明（必看）：<div id = "close"><a href = "javascript:;">关闭</a></div></div>
+			<ul>
+				<li>支持HTTPS，CDN加速，上传限制为2M</li>
+				<li>推荐使用Chrome、Firefox浏览器</li>
+				<li>严禁上传任何色情、暴力、反动等图片，否则直接删除</li>
+				<li>项目地址：<a href = "https://github.com/helloxz/xz-pic" rel = "nofollow" target = "_blank" title = "点此下载源码">https://github.com/helloxz/xz-pic</a></li>
+				<li>使用文档请参考：<a href = "https://github.com/helloxz/xz-pic" rel = "nofollow" target = "_blank" title = "">https://github.com/helloxz/xz-pic</a></li>
+			</ul>
+		</div>
+	</div>
+	<script>
+		$(document).ready(function() {
+			$("#localhost").click(function(){
+				$("#localhost").css({"background-color":"#3385FF",color:"#FFFFFF"});
+				$("#qiniu").css({"background-color":"#FFFFFF",color:"#3385FF"});
+				$("#upform").attr("action", "./upload.php");
+			});
+			$("#qiniu").click(function(){
+				$("#qiniu").css({"background-color":"#3385FF","color":"#FFFFFF"});
+				$("#localhost").css({"background-color":"#FFFFFF","color":"#3385FF"});
+				$("#upform").attr("action", "./qnupload.php");
+			});
+		});
+	</script>
+</body>
+</html>
