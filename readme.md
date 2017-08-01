@@ -16,7 +16,7 @@ XZ Pic（小z图床）是一个简易的图床程序，开箱即用，实现快�
 3. 最后访问您的域名测试
 4. 1.1版本使用说明请访问：[http://www.xiaoz.me/archives/7860](http://www.xiaoz.me/archives/7860 "http://www.xiaoz.me/archives/7860")
 
-![](https://img.bsdev.cn/uploads/1609/0134212181.png)
+![](https://https://i.bk.tn/uploads/1609/0134212181.png)
 
 ### 版本更新
 #### 1.0版本(2016.10.27)
@@ -30,8 +30,8 @@ XZ Pic（小z图床）是一个简易的图床程序，开箱即用，实现快�
 
 
 ### 其他说明
-* 演示地址：[https://img.bsdev.cn/](https://img.bsdev.cn/ "https://img.bsdev.cn/")
+* 演示地址：[https://i.bk.tn/](https://i.bk.tn/ "https://i.bk.tn/")
 * 个人博客：[https://www.xiaoz.me/](https://www.xiaoz.me/ "https://www.xiaoz.me/")
 * QQ:337003006
 
-![](https://img.bsdev.cn/uploads/1609/0138055958.png)
+![](https://https://i.bk.tn//uploads/1609/0138055958.png)
