@@ -18,7 +18,7 @@ PHP >= 5.6
 * 1.3 版本使用说明请访问：[https://www.xiaoz.me/archives/8973](http://www.xiaoz.me/archives/8973 "https://www.xiaoz.me/archives/8973")
 
 ### 更新日志
-#### 1.2版本（2017.08）
+#### 1.3版本（2017.08）
 * 优化了提示
 * 新增SM.MS免费图床
 * 新增删除本地图片
