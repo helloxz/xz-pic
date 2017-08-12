@@ -16,7 +16,8 @@ $(document).ready(function(){
 		var extStart=filepath.lastIndexOf(".");
 		var ext=filepath.substring(extStart,filepath.length).toUpperCase();
 		if(ext!=".BMP"&&ext!=".PNG"&&ext!=".GIF"&&ext!=".JPG"&&ext!=".JPEG"){
-			alert("图片限于png,gif,jpeg,jpg格式");
+			$("#uperror").show();
+			$("#uperror").fadeOut(3000);
 			return false;
 		}
 		//正在上传
@@ -85,11 +86,8 @@ $(document).ready(function(){
 				return $("#htmlurl").val();	
 			},
 			afterCopy: function() {
-				layer.open({
-					title:'温馨提示',
-					content:'复制成功！',
-					time:1500
-				});
+				$("#copyok").show();
+				$("#copyok").fadeOut(3000);
 			}
 		});
 	});
@@ -99,11 +97,8 @@ $(document).ready(function(){
 				return $("#mdurl").val();
 			},
 			afterCopy: function() {
-				layer.open({
-					title:'温馨提示',
-					content:'复制成功！',
-					time:1500
-				});
+				$("#copyok").show();
+				$("#copyok").fadeOut(3000);
 			}
 		});
 	});

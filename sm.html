@@ -11,7 +11,7 @@
 	<script type="text/javascript" src="./js/jquery.min.js"></script>
 	<script src = "./js/jquery.form.js"></script>
 	<script src="./js/clipBoard.min.js"></script>
-	<script src = "./js/embed.js"></script>
+	<script src="./js/sm.js"></script>
 </head>
 <body>
 	<!--上传后的提示-->
@@ -28,14 +28,11 @@
 	</div>
 	<div id = "up">
 		<center>
-		<form enctype="multipart/form-data" method="post" action="./upload.php" id = "upform">
+		<form enctype="multipart/form-data" method="post" action="https://sm.ms/api/upload" id = "upform">
 		<div id = "interface">
-			上传方式：
-			<input name="uptype" type="radio" value="localhost" checked = "checked" id = "localhost" /> 本地
-			<input name="uptype" type="radio" value="qiniu" id = "qiniu" /> 七牛 | 
-			<a href="./sm.html" style = "color:#0099CC;">SM.MS</a>
+			当前上传方式:SM.MS | <a href="./" style = "color:#0099CC;">切 换</a>
 		</div>
-		<input type="file" name="file" id = "file" class = "up-file">
+		<input type="file" name="smfile" id = "smfile" class = "up-file">
 		<input type="submit" id = 'btn' value = "开始上传" class = "btn">
 		
 		</form>

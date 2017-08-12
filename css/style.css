@@ -5,6 +5,7 @@ body {
 	font-family:'微软雅黑';
 	color:#333333;
 }
+a{text-decoration:none}
 #up {
 	width:900px;
 	height:auto;
@@ -137,4 +138,49 @@ body {
 #interface {
 	text-align: center;
 	margin-bottom:38px;
+}
+/*上传成功*/
+#upsuccess {
+	width:100%;
+	top:0;
+	left:0;
+	right:0;
+	padding:18px;
+	position:fixed;
+	text-align:center;
+	font-size:16px;
+	background-color: #CCFFCC;
+	color:#009900;
+	z-index:100;
+	display: none;
+}
+/*复制成功*/
+#copyok {
+	width:100%;
+	top:0;
+	left:0;
+	right:0;
+	padding:18px;
+	position:fixed;
+	text-align:center;
+	font-size:16px;
+	background-color: #CCFFCC;
+	color:#009900;
+	z-index:100;
+	display: none;
+}
+/*上传错误*/
+#uperror {
+	width:100%;
+	top:0;
+	left:0;
+	right:0;
+	padding:18px;
+	position:fixed;
+	text-align:center;
+	font-size:16px;
+	background-color: #FF9797;
+	color: #FF0000;
+	z-index:100;
+	display: none;
 }
