@@ -1,5 +1,16 @@
 <?php
 	error_reporting(E_ALL^E_NOTICE^E_WARNING^E_DEPRECATED);
+	//载入TinyPNG API
+	/*
+	require_once("lib/Tinify/Exception.php");
+	require_once("lib/Tinify/ResultMeta.php");
+	require_once("lib/Tinify/Result.php");
+	require_once("lib/Tinify/Source.php");
+	require_once("lib/Tinify/Client.php");
+	require_once("lib/Tinify.php");
+	*/
+	//载入TinyPNG END
+	
 	$img_name = $_FILES["file"]["name"];	//文件名称
 	$suffix = substr(strrchr($img_name, '.'), 1);//文件后缀
 	$suffix = strtolower($suffix);				//文件后缀转换为小写
@@ -73,6 +84,9 @@
 	    else {
 		    //如果上传成功
 		    if(move_uploaded_file($img_tmp,$dir_name)){
+			    //设置自己的TinyPNG API KEY
+			    Tinify\setKey("TinyPNG API KEY");
+				Tinify\fromFile($dir_name)->toFile($dir_name);
 			    //请在下面设置您自己的域名
 			    $img_url = 'http://localhost/xz-pic/'.$dir_name;		//自定义图片路径
 			    $img_info = getimagesize($dir_name);
