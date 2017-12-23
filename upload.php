@@ -85,8 +85,8 @@
 		    //如果上传成功
 		    if(move_uploaded_file($img_tmp,$dir_name)){
 			    //设置自己的TinyPNG API KEY
-			    Tinify\setKey("TinyPNG API KEY");
-				Tinify\fromFile($dir_name)->toFile($dir_name);
+			    //Tinify\setKey("TinyPNG API KEY");
+				//Tinify\fromFile($dir_name)->toFile($dir_name);
 			    //请在下面设置您自己的域名
 			    $img_url = 'http://localhost/xz-pic/'.$dir_name;		//自定义图片路径
 			    $img_info = getimagesize($dir_name);
